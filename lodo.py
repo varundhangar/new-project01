@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-from sklearn.model_selection import train_test_split
+#from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
@@ -61,6 +61,7 @@ if st.button("Check Message"):
             
         else:
             st.success("⚠️ This is a FRAUD message.")
+
 
 
 
