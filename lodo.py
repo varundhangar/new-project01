@@ -1,10 +1,9 @@
 import pandas as pd
 import streamlit as st
-import sklearn.model_selection
 from sklearn.model_selection import train_test_split
-#import LogisticRegression
-#from sklearn.feature_extraction.text import TfidfVectorizer
-#import joblib
+from sklearn.linear_model import LogisticRegression
+from sklearn.feature_extraction.text import TfidfVectorizer
+import joblib
 
 #from sklearn.neighbors import KNeighborsClassifier   
 
@@ -35,7 +34,7 @@ joblib.dump((vectorizer, model), "fraud_model.pkl")
 model.fit(X_train_vec, y_train)
 
 
-#_____main_____
+#main____
 
 user_input = st.text_input(label="Enter the message to check for fraud:")
 
@@ -61,13 +60,4 @@ if st.button("Check Message"):
             st.error("✅ This is a SAFE message.")
             
         else:
-            st.success("⚠️ This is a FRAUD message.")
-
-
-
-
-
-
-
-
-
+            st.success("⚠ This is a FRAUD message.")
